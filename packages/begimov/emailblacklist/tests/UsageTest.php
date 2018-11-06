@@ -54,4 +54,20 @@ class StringUsageTest extends TestCase
             'email' => $user->email
         ]);
     }
+
+    /** @test */
+    public function cant_blacklist_using_invalid_email_as_string()
+    {
+        $this->user->blacklist('invalid@email');
+
+        $this->assertEquals(\EmailStub::all()->count(), 0);
+    }
+
+    /** @test */
+    public function cant_blacklist_using_array_of_partially_invalid_emails()
+    {
+        $this->user->blacklist(['invalid@email', 'valid@email.com']);
+
+        $this->assertEquals(\EmailStub::all()->count(), 0);
+    }
 }
