@@ -14,22 +14,22 @@ trait Blacklistable
         }
     }
 
-    public function isBlacklisted(string $email)
+    public function isBlacklisted(string $email = '')
     {
-        return Email::whereIn('email', $this->normalize([$email]))
+        return Email::whereIn('email', $this->prepare($email))
             ->get()
             ->isNotEmpty();
     }
 
     public function whitelist($emails = null)
     {
-        Email::whereIn('email', $this->normalize($emails))
+        Email::whereIn('email', $this->prepare($emails))
             ->delete();
     }
 
     private function prepare($emails)
     {
-        if (is_null($emails)) {  
+        if (empty($emails)) {  
             return $this->email 
                 ? $this->validate($this->normalize([$this->email])) 
                 : [];
