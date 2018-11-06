@@ -22,6 +22,11 @@
         "orchestra/testbench": "~3.0",
         "phpunit/phpunit": "^7"
     },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
     "extra": {
         "laravel": {
             "providers": [
