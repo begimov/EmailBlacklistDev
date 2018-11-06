@@ -2,7 +2,7 @@ Laravel package to create and maintain email blacklist.
 ==============
 
 ## Installation
-To install through composer, simply put the following in your composer.json file:
+To install through composer, put the following in your composer.json file:
 
 ```json
 {
@@ -11,11 +11,12 @@ To install through composer, simply put the following in your composer.json file
     }
 }
 ```
+
+And then run composer install from the terminal.
+
 or execute:
 
     composer require begimov/emailblacklist
-
-And then run composer install from the terminal.
 
 ## Usage
 
@@ -23,6 +24,8 @@ To use Component, all you need to do is add `Begimov\Emailblacklist\Traits\Black
 
 ```php
 <?php
+
+use Begimov\Emailblacklist\Traits\Blacklistable;
 
 class User extends Authenticatable
 {
