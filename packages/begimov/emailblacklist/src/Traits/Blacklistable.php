@@ -4,9 +4,14 @@ namespace Begimov\Emailblacklist\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Begimov\Emailblacklist\Models\Email;
+use Illuminate\Support\Facades\Validator;
 
 trait Blacklistable
 {
+    protected $validationRules = [
+        'required', 'string', 'email', 'max:255'
+    ];
+
     /**
      * Add emails to blacklist.
      *
@@ -79,20 +84,27 @@ trait Blacklistable
     private function normalize(array $emails)
     {
         return array_map(function($email) {
-            return strtolower(trim($email));
+            return ['email' => strtolower(trim($email))];
         }, $emails);
     }
 
     /**
-     * .......
+     * Validating array of emails
      *
      * @param  array $emails
      * @return array
      */
     private function validate(array $emails)
     {
-        // validate after filtering
-        return $this->filter($emails);
+        $validator = Validator::make($filteredEmails = $this->filter($emails), [
+            '*.email' => $this->validationRules
+        ]);
+
+        if ($validator->fails()) {
+            return [];
+        }
+
+        return array_flatten($filteredEmails);
     }
 
     /**

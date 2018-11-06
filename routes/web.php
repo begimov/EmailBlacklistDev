@@ -3,5 +3,5 @@
 use App\User;
 
 Route::get('/', function () {
-    dd(User::find(1)->isBlacklisted('aaaa'));
+    dd(User::find(1)->whitelist(['begimov@a.com', 'begimov@b.com']));
 });
