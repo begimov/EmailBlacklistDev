@@ -33,7 +33,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Begimov\\Emailblacklist\\EmailBlacklistServiceProvider"
+                "Begimov\\Emailblacklist\\Providers\\EmailBlacklistServiceProvider"
             ]
         }
     }
