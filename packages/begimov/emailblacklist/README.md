@@ -6,7 +6,7 @@ To install through composer, put the following in your composer.json file:
 
 ```json
 {
-    "require-dev": {
+    "require": {
         "begimov/emailblacklist": "^1.0"
     }
 }
