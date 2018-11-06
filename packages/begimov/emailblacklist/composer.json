@@ -1,0 +1,21 @@
+{
+    "name": "begimov/emailblacklist",
+    "description": "Package to create and maintain email blacklist",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Galymzhan Begimov",
+            "email": "begimov@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Begimov\\Emailblacklist\\": "src"
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "illuminate/database": ">=5.0",
+        "illuminate/support": ">=5.0"
+    }
+}
