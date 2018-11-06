@@ -164,6 +164,8 @@ return [
          * Package Service Providers...
          */
 
+        Begimov\Emailblacklist\EmailBlacklistServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
