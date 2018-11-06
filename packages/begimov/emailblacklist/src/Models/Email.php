@@ -12,4 +12,6 @@ class Email extends Model
      * @var string
      */
     protected $table = 'blacklist';
+
+    protected $fillable = ['email'];
 }

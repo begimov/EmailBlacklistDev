@@ -1,7 +1,7 @@
 <?php
 
-use Begimov\Emailblacklist\Models\Email;
+use App\User;
 
 Route::get('/', function () {
-    dd(Email::get());
+    dd(User::find(1)->isBlacklisted('aaaa'));
 });
