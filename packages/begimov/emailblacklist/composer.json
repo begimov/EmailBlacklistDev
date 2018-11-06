@@ -18,6 +18,10 @@
         "illuminate/database": ">=5.0",
         "illuminate/support": ">=5.0"
     },
+    "require-dev": {
+        "orchestra/testbench": "~3.0",
+        "phpunit/phpunit": "^7"
+    },
     "extra": {
         "laravel": {
             "providers": [
