@@ -116,7 +116,7 @@ trait Blacklistable
     private function filter(array $emails)
     {
         return array_filter($emails, function($email) {
-            return !empty($email);
+            return !empty($email['email']);
         });
     }
 }
